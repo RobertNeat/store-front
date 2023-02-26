@@ -1,0 +1,85 @@
+<!--section-->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed archive__date__header font_Comfortaa" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
+                                2022-10-10
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <!--archive-body-start-->
+                                <div class="container">
+                                    <div class="row archive__list_item">
+                                        <div class="col-10 col-md-5 archive__container__margin">
+                                            <!--User details-->
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Name:</td>
+                                                        <td>John Krasinski</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Country:</td>
+                                                        <td>USA</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>City:</td>
+                                                        <td>New York</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Street:</td>
+                                                        <td>Broadway</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Apartment number:</td>
+                                                        <td>12n/3</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="col-10 col-md-5 archive__container__margin">
+                                            <!--Order details-->
+                                            <table class="table">
+                                                <tbody>
+                                                    <!--item-->
+                                                    <tr>
+                                                        <td rowspan="2"><img src="/img/book/book_7.png"
+                                                                class="archive__item__image"></td>
+                                                        <td colspan="2">Psychology of the money</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>5 items</td>
+                                                        <td>47.92 $</td>
+                                                    </tr>
+                                                    <!--item-->
+                                                    <tr>
+                                                        <td rowspan="2"><img src="/img/book/book_5.png"
+                                                                class="archive__item__image"></td>
+                                                        <td colspan="2">Stop worrying and start living</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>13 items</td>
+                                                        <td>71.92 $</td>
+                                                    </tr>
+                                                    <!--item-->
+                                                    <tr>
+                                                        <td rowspan="2"><img src="/img/book/book_3.png"
+                                                                class="archive__item__image"></td>
+                                                        <td colspan="2">Happy</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>8 items</td>
+                                                        <td>36.27 $</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--archive-body-end-->
+                            </div>
+                        </div>
+                    </div>

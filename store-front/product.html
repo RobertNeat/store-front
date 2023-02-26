@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--CSS Styles-->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/product.css" rel="stylesheet" type="text/css">
+
+    <!--JavaScript-->
+    <script src="js/bootstrap.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/bookService.js" defer></script>
+
+
+    <!--GoogleFonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+
+    <!--bookstore.ico-->
+    <link rel="icon" type="image/x-icon" href="/img/logo/bookstore.ico">
+
+    <title>Bookstore</title>
+</head>
+
+<body>
+    <div class="common__site__body">
+        <div class="common__page__content">
+            <!--Modal-Bought-->
+            <div class="modal fade" id="boughtModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content common__modal__success">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Your basket has been successfully updated
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Book has been added to your basket
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button"
+                                class="btn btn-primary product__book__description__purchase__button product__book__description__displayInline"
+                                data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Modal-Error-->
+            <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content common__modal__error">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Buying error</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Book couldn't be added, please log in.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button"
+                                class="btn btn-primary product__book__description__purchase__button product__book__description__displayInline"
+                                data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+                <!--Topbar-->
+                <div class="common__topbar">
+                    <div role="list" class="common__topbar__element common__topbar__marginal d-none d-sm-block">
+                        <p onclick="goToAbout()" role="listitem" class="menu__text font_Comfortaa">About Us</p>
+                    </div>
+                    <div class="common__topbar__element">
+                        <p onclick="goToIndex()" class="menu__text font_BungeeShade common__topbar__logo">BookStore</p>
+                    </div>
+                    <!--Account-hidden-->
+                    <div class="common__topbar__element common__topbar__marginal d-none d-sm-block common__topbar__account__hidden"
+                        id="topbar__account">
+                        <p class="menu__text font_Comfortaa" onclick="accountMenuShow()">Account</p>
+                        <div id="account__menu" class="common__topbar__account__dropdown">
+                            <div role="list" class="font_Comfortaa">
+                                <p role="listitem" class="common__text__nopadding__nomargin" onclick="accountMenuHide()">X
+                                </p>
+                                <p role="listitem" class="common__text__nopadding__nomargin" onclick="goToCart()">Basket</p>
+                                <p role="listitem" class="common__text__nopadding__nomargin" onclick="goToArchive()">
+                                    Purchases</p>
+                                <p role="listitem" class="common__text__nopadding__nomargin" onclick="logout()">Logout</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="common__topbar__element common__topbar__marginal d-none d-sm-block common__topbar__flexcontainer" id="topbar__register__login">
+                        <table>
+                            <tr>
+                                <td class="common__register__login__padd">
+                                    <p onclick="goToRegister()"
+                                        class="menu__text font_Comfortaa common__text__nopadding__nomargin">Register</p>
+                                </td>
+                                <td class="common__register__login__padd">
+                                    <p onclick="goToLogin()"
+                                        class="menu__text font_Comfortaa common__text__nopadding__nomargin">Login</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+    
+                    <!--Topbar-Offcanvas-->
+                    <div class="d-block d-sm-none">
+                        <img src="/img/svg/hamburger.svg" alt="Menu"
+                            class="common__topbar__element common__topbar__hamburger" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasTop">
+    
+                        <div class="offcanvas offcanvas-top common__topbar__offcanvas__text" tabindex="-1" id="offcanvasTop"
+                            aria-labelledby="offcanvasTopLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasTopLabel">Menu</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <div role="list">
+                                    <div role="listitem" onclick="goToIndex()">Product Catalog</div>
+                                    <div role="listitem" onclick="goToProduct()">Product Details</div>
+                                    <div role="listitem" onclick="goToLogin()">Login</div>
+                                    <div role="listitem" onclick="goToRegister()">Register</div>
+                                    <div role="listitem" onclick="goToCart()">Basket</div>
+                                    <div role="listitem" onclick="goToArchive()">Archive</div>
+                                    <div role="listitem" onclick="goToAbout()">About Us</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div>
+                        <button class="common__display__none" id="buy_success" data-bs-toggle="modal"
+                            data-bs-target="#boughtModal"></button>
+                        <button class="common__display__none" id="buy_failure" data-bs-toggle="modal"
+                            data-bs-target="#errorModal"></button>
+                    </div>
+                    <div class="item" id="item"></div>
+                </div>
+            </div>
+
+        <!--Footer-->
+        <div class="common__footer__container">
+            <div class="container common__footer__flex">
+                <div role="list">
+                    <div role="listitem" onclick="goToIndex()">Product Catalog</div>
+                    <div role="listitem" onclick="goToProduct()">Product Details</div>
+                    <div role="listitem" onclick="goToLogin()">Login</div>
+                    <div role="listitem" onclick="goToRegister()">Register</div>
+                    <div role="listitem" onclick="goToCart()">Basket</div>
+                    <div role="listitem" onclick="goToArchive()">Archive</div>
+                    <div role="listitem" onclick="goToAbout()">About Us</div>
+                </div>
+                <div>
+                    <img src="/img/logo/logo1.png" class="common__footer__image">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

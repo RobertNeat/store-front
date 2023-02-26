@@ -1,0 +1,42 @@
+/*  styles only for cart.html file                                                 */
+/*  naming convention for future use [common__component__subcomponent--function]    */
+
+.cart__pane__background {
+    background-color: #b8dbeb;
+    margin: 1em !important;
+    padding: 3em !important;
+}
+
+.cart__item__image {
+    height: 6em !important;
+    width: auto;
+}
+
+.cart__item__title {
+    font-size: larger;
+}
+
+.cart__item__count__input{
+    width: 10em;
+}
+
+.cart__summary{
+    font-weight: bold !important;
+    font-size: x-large;
+}
+
+
+.cart__button {
+    background-color: #1a5670 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding-left: 5em !important;
+    padding-right: 5em !important;
+}
+
+.cart__button__flexContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

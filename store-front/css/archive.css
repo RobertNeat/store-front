@@ -1,0 +1,37 @@
+/*  styles only for index.html file                                  */
+/*  naming convention for future use [archive__component--function]    */
+
+
+/* archive.html */
+
+.archive__list_item{
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-around !important;
+    align-items: flex-start !important;
+}
+
+.archive__container__margin{
+    margin: 1em !important;
+}
+
+
+@media (max-width: 780px){
+    .archive__list_item{
+        flex-direction: column !important;
+    }
+}
+
+.archive__item__image {
+    height: 6em !important;
+    width: auto;
+}
+
+.archive__date__header{
+    background-color: #8ecbe6 !important;
+    font-weight: bolder !important;
+    color: white !important;
+    font-size:large !important;
+    letter-spacing: 0.1em;
+}

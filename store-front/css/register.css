@@ -1,0 +1,32 @@
+/*  styles only for register.html file                                                 */
+/*  naming convention for future use [common__component__subcomponent--function]    */
+
+.register__background__pane {
+    background-color: #b8dbeb;
+    margin: 1em !important;
+    padding: 3em !important;
+}
+
+.register__form__table {
+    width: 100%;
+}
+
+.register__button {
+    background-color: #1a5670 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding-left: 5em !important;
+    padding-right: 5em !important;
+    margin: 1em;
+}
+
+.register__button__flexContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.register__form__element{
+    margin: 0.5em;
+}

@@ -1,0 +1,27 @@
+/*  styles only for index.html file                                                */
+/*  naming convention for future use [index__component__subcomponent--function]    */
+
+.index__item__card{
+    padding: 2% !important;
+    color: white !important;
+}
+
+.index__item__description{
+    margin-top: 3% !important;
+    background-color: #2b90bc !important;
+}
+
+.index__item__card__title{
+    font-weight: bold !important;
+}
+
+.index__purchase__button {
+    float: right !important;
+    bottom: 0 !important;
+
+    background-color: #1a5670 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+}

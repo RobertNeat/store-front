@@ -1,0 +1,54 @@
+/*  styles only for login.html file                                                 */
+/*  naming convention for future use [common__component__subcomponent--function]    */
+
+.login__background{
+   background-color: #b8dbeb;
+    margin: 1em !important;
+    padding: 3em !important;
+}
+
+.login__pane__table{
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 2em;
+   margin-bottom: 2em;
+}
+
+.login__button{
+   background-color: #1a5670 !important;
+   border: none !important;
+   border-radius: 0 !important;
+   padding-left: 5em !important;
+   padding-right: 5em !important;
+}
+
+.login__button__flexContainer{
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+}
+
+.login__form__element{
+   margin: 0.5em;
+}
+
+.login__perform{
+   margin: 0;
+   padding: 0.8em;
+   font-weight: bold;
+   font-size: large;
+   margin-bottom: 0.8em;
+}
+
+.login__perform__success{
+   background-color: aquamarine;
+}
+
+.login__perform__failure{
+   background-color: lightsalmon;
+}
+
+.login__perform__hidden{
+   display: none !important;
+}

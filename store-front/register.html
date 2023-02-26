@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--CSS Styles-->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/register.css" rel="stylesheet" type="text/css">
+
+    <!--JavaScript-->
+    <script src="js/bootstrap.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/registerService.js" defer></script>
+
+    <!--GoogleFonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+
+    <!--bookstore.ico-->
+    <link rel="icon" type="image/x-icon" href="/img/logo/bookstore.ico">
+
+    <title>Bookstore</title>
+</head>
+
+<body><!--onload="checkLoggedIn()"-->
+    <div class="common__site__body">
+        <div class="common__page__content">
+            <!--Register-success-modal-->
+            <div class="modal fade" id="registerSuccess" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content common__modal__success">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Registered!</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Your account is created - you can log in now!
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button"
+                                class="btn btn-primary product__book__description__purchase__button product__book__description__displayInline"
+                                data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Register-Failure-modal-->
+            <div class="modal fade" id="registerError" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content common__modal__error">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Register Error</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Your account wasnt created - please make sure your data is correct or contact website
+                            administrator.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button"
+                                class="btn btn-primary product__book__description__purchase__button product__book__description__displayInline"
+                                data-bs-dismiss="modal" onclick="goToIndex()">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!--Topbar-->
+            <div class="common__topbar">
+                <div role="list" class="common__topbar__element common__topbar__marginal d-none d-sm-block">
+                    <p onclick="goToAbout()" role="listitem" class="menu__text font_Comfortaa">About Us</p>
+                </div>
+                <div class="common__topbar__element">
+                    <p onclick="goToIndex()" class="menu__text font_BungeeShade common__topbar__logo">BookStore</p>
+                </div>
+                <!--Account-hidden-->
+                <div class="common__topbar__element common__topbar__marginal d-none d-sm-block common__topbar__account__hidden"
+                    id="topbar__account">
+                    <p class="menu__text font_Comfortaa" onclick="accountMenuShow()">Account</p>
+                    <div id="account__menu" class="common__topbar__account__dropdown">
+                        <div role="list" class="font_Comfortaa">
+                            <p role="listitem" class="common__text__nopadding__nomargin" onclick="accountMenuHide()"> X
+                            </p>
+                            <p role="listitem" class="common__text__nopadding__nomargin" onclick="goToCart()"> Basket
+                            </p>
+                            <!--Dodać parametr przekazywany dla basketu, zeby wyswietlalo dany basket-->
+                            <p role="listitem" class="common__text__nopadding__nomargin" onclick="goToArchive()">
+                                Purchases </p>
+                            <!--Dodać przekazywanie parametru do historii zakupów dla danego usera-->
+                            <p role="listitem" class="common__text__nopadding__nomargin" onclick="logout()">
+                                Logout </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="common__topbar__element common__topbar__marginal d-none d-sm-block common__topbar__flexcontainer"
+                    id="topbar__register__login">
+                    <table>
+                        <tr>
+                            <td class="common__register__login__padd">
+                                <p onclick="goToRegister()"
+                                    class="menu__text font_Comfortaa common__text__nopadding__nomargin">Register</p>
+                            </td>
+                            <td class="common__register__login__padd">
+                                <p onclick="goToLogin()"
+                                    class="menu__text font_Comfortaa common__text__nopadding__nomargin">Login</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!--Topbar-Offcanvas-->
+                <div class="d-block d-sm-none">
+                    <img src="/img/svg/hamburger.svg" alt="Menu"
+                        class="common__topbar__element common__topbar__hamburger" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasTop">
+
+                    <div class="offcanvas offcanvas-top common__topbar__offcanvas__text" tabindex="-1" id="offcanvasTop"
+                        aria-labelledby="offcanvasTopLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasTopLabel">Menu</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <div role="list">
+                                <div role="listitem" onclick="goToIndex()">Product Catalog</div>
+                                <div role="listitem" onclick="goToProduct()">Product Details</div>
+                                <div role="listitem" onclick="goToLogin()">Login</div>
+                                <div role="listitem" onclick="goToRegister()">Register</div>
+                                <div role="listitem" onclick="goToCart()">Basket</div>
+                                <div role="listitem" onclick="goToArchive()">Archive</div>
+                                <div role="listitem" onclick="goToAbout()">About Us</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Register Body -->
+            <div class="container">
+                <div class="row">
+                    <!--Register pane-->
+                    <div class="col-0 col-sm-1 col-md-2 col-lg-3"></div>
+                    <div class="register__background__pane  col-12 col-sm-10 col-md-8 col-lg-6 ">
+                        <h2 class="text-center login__title">Register</h2>
+
+                        <form class="text-center" onsubmit="checkPass()">
+                            <input type="text" class="form-control text-center register__form__element" placeholder="Name" id="register_name" required>
+                            <input type="text" class="form-control text-center register__form__element" placeholder="Surname" id="register_surname" required>
+                            <input type="text" class="form-control text-center register__form__element" placeholder="Address" id="register_address" required>
+                            <input type="text" class="form-control text-center register__form__element" placeholder="Contact" id="register_contact" required>
+                            <br>
+                            <input type="text" class="form-control text-center register__form__element" placeholder="Username" id="register_username" required>
+                            <input type="password" class="form-control text-center register__form__element" placeholder="Password" id="register_password" required>
+                            <input type="password" class="form-control text-center register__form__element" placeholder="Retype password" id="retype_password" required>
+
+                            <div class="register__button__flexContainer">
+                                <input type="submit" onclick="" class="btn btn-primary register__button"
+                                    value="Register">
+                                <button class="common__display__none" id="register_ok" data-bs-toggle="modal"
+                                    data-bs-target="#registerSuccess"></button>
+                                <button class="common__display__none" id="register_not_ok" data-bs-toggle="modal"
+                                    data-bs-target="#registerError"></button>
+                            </div>
+                        </form>
+
+
+                    </div>
+                    <div class="col-0 col-sm-1 col-md-2 col-lg-3"></div>
+                </div>
+            </div>
+
+        </div>
+        <!--Footer-->
+        <div class="common__footer__container">
+            <div class="container common__footer__flex">
+                <div role="list">
+                    <div role="listitem" onclick="goToIndex()">Product Catalog</div>
+                    <div role="listitem" onclick="goToProduct()">Product Details</div>
+                    <div role="listitem" onclick="goToLogin()">Login</div>
+                    <div role="listitem" onclick="goToRegister()">Register</div>
+                    <div role="listitem" onclick="goToCart()">Basket</div>
+                    <div role="listitem" onclick="goToArchive()">Archive</div>
+                    <div role="listitem" onclick="goToAbout()">About Us</div>
+                </div>
+                <div>
+                    <img src="/img/logo/logo1.png" class="common__footer__image">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

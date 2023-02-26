@@ -1,0 +1,44 @@
+/*  styles only for product.html file                                  */
+/*  naming convention for future use [product__component__subcomponent--function]    */
+
+.product__product__container{
+    margin: 2em !important;
+}
+
+.product__book__description{
+    height: 100%;
+    background-color: #d2e8ff;
+    padding: 3em;
+}
+
+.product__book__description__noBold{
+    font-weight: normal;
+}
+
+.product__book__description__displayInline{
+    display: inline;
+}
+.product__book__description__toRight{
+    float: right;
+    bottom: 0;
+}
+
+.product__book__description__toRight > h5{
+    padding: 0.5em;
+}
+
+.product__book__description__toRight > a{
+    position: relative;
+    bottom: 0;
+    right: 0;
+}
+
+.product__book__description__purchase__button {
+    bottom: 0 !important;
+
+    background-color: #1a5670 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+}

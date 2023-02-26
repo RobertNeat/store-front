@@ -1,0 +1,152 @@
+/*  styles for all subsites of webpage                                              */
+/*  naming convention for future use [common__component__subcomponent--function]    */
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Fonts */
+.font_BungeeShade {
+    font-family: 'Bungee Shade' !important;
+}
+
+.font_Comfortaa {
+    font-family: 'Comfortaa' !important;
+}
+
+.font_Ubuntu {
+    font-family: 'Ubuntu' !important;
+}
+
+/* Topbar Menu */
+.common__topbar {
+    background-color: #2b90bc !important;
+    color: white !important;
+    
+    width: 100% !important;
+    margin-bottom: 2em !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    align-content: center !important;
+
+    font-weight: bold !important;
+    font-size: x-large !important;
+}
+
+.common__topbar__element {
+    margin: 0.3% !important;
+    margin-left: 1em !important;
+    margin-right: 1em !important;
+}
+
+/* p child of "common__topbar__element" class*/
+.common__topbar__element > p {
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.common__topbar__logo {
+    letter-spacing: 0.2em !important;
+    font-size: larger !important;
+}
+
+.common__topbar__marginal {
+    font-size: smaller !important;
+    font-weight: lighter !important;
+}
+
+.common__topbar__offcanvas__text{
+    color: black;
+    font-size:large;
+    font-weight: normal;
+
+    height: 40%;
+}
+
+.common__topbar__hamburger{
+    height: 1.5em;
+    width: auto;
+}
+
+/* Footer Menu */
+.common__footer__container{
+    width: 100% !important;
+    margin: 0 !important;
+    margin-top: 2em !important;
+
+    background-color: #94c7dd !important;
+}
+
+.common__footer__flex{
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+    padding-right: 2em !important;
+    padding-left: 2em !important;
+}
+
+.common__footer__image {
+    height: 100px !important;
+}
+
+/* footer position at the end of page */
+.common__site__body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.common__page__content{
+    flex: 1;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Account menu will be hidden when in localstorage is no key with user id*/
+.common__topbar__account__hidden{
+    display: none !important;
+}
+
+.common__text__nopadding__nomargin{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.common__topbar__account__dropdown{
+    position: absolute;
+    background-color: #2b90bc;
+    padding: 1em;
+    margin: 0;
+    right:0em;
+    z-index: 1;
+
+    top:-0.5em;
+}
+
+.common__register__login__padd{
+    padding: 0.5em;
+}
+
+.common__display__none{
+    display: none;
+}
+
+.common__modal__error{
+    background-color: LightSalmon !important;
+}
+
+.common__modal__success{
+    background-color: PaleGreen !important;
+}
